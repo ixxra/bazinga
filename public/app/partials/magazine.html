@@ -1,0 +1,16 @@
+<section>
+    <h1>Volumes</h1>
+    <article ng-repeat="article in magazineInfo.data">
+        <header>
+            <h3>{{article.title}}</h3>
+        </header>
+        <p>
+        <em>{{article.authors.join(', ')}}</em>
+        </p>
+        <p>
+            {{article.abstract}}
+        </p>
+    </article>
+    
+    <em>{{magazineInfo.total}} Issues</em>
+</section>
