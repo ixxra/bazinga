@@ -1,15 +1,17 @@
 <section>
     <h1>Volumes</h1>
-    <article ng-repeat="article in magazineInfo.data">
-        <header>
-            <h3>{{article.title}}</h3>
+    <article class="panel panel-default" ng-repeat="article in magazineInfo.data">
+        <header class="panel-heading">
+            <h3 class="panel-title"><a href="{{article.url}}">{{article.title}}</a></h3>
         </header>
+        <div class="panel-body">
         <p>
         <em>{{article.authors.join(', ')}}</em>
         </p>
         <p>
             {{article.abstract}}
         </p>
+        </div>
     </article>
     
     <em>{{magazineInfo.total}} Issues</em>
