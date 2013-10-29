@@ -58,8 +58,12 @@ exports.magazine = function(req, res){
         url: MAGAZINE,
         src: [jquery],
         done: function (errors, window) {
-            magazine = show_magazine(errors, window);
-            res.send(magazine);
+            if (errors) {
+                console.log('Resourse not available');
+            } else {
+                magazine = show_magazine(errors, window);
+               res.send(magazine);    
+            }
             //res.render ... uses 'magazine' view
             //and binds magazine object
             //res.render('magazine', magazine);

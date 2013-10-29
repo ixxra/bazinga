@@ -10,7 +10,7 @@ angular.module('bazinga', [
   'bazinga.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/magazine.html', controller: 'MagazineCtrl'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/magazine', {templateUrl: 'partials/magazine.html', controller: 'MagazineCtrl'});
+  $routeProvider.when('/article', {templateUrl: 'partials/article.html', controller: 'MyCtrl2'});
+  $routeProvider.otherwise({redirectTo: '/magazine'});
 }]);

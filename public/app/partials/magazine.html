@@ -1,6 +1,7 @@
 <section>
     <h1>Volumes</h1>
-    <article class="panel panel-default" ng-repeat="article in magazineInfo.data">
+    <input class="pull-right" ng-model="searchText" />
+    <article class="panel panel-default" ng-repeat="article in magazineInfo.data | filter:searchText">
         <header class="panel-heading">
             <h3 class="panel-title"><a href="{{article.url}}">{{article.title}}</a></h3>
         </header>
@@ -13,6 +14,5 @@
         </p>
         </div>
     </article>
-    
     <em>{{magazineInfo.total}} Issues</em>
 </section>
