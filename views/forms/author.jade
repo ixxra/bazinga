@@ -1,0 +1,24 @@
+block AuthorForm
+
+form(role='form', action='/admin/authors', method='post')
+    div.form-group
+        label(for='name') Name
+        input#name.form-control(type='text', name='name' placeholder='Name')
+        
+    div.form-group
+        label(for='surname') Surname
+        input#surname.form-control(type='text', name='surname' placeholder='Surname')
+    
+    div.form-group
+        label(for='email') Email
+        input#email.form-control(type='text', name='email' placeholder='Email')
+    
+    div.form-group
+        label(for='institution') Institution
+        input#institution.form-control(type='text', name='institution' placeholder='Institution')
+    
+    div.form-group
+        label(for='url') URL
+        input#url.form-control(type='text', name='url', placeholder='Url')
+    
+    button.btn.btn-default(type='submit') Submit

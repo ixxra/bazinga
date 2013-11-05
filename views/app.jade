@@ -1,0 +1,17 @@
+extends layout
+
+block bootstrap
+    link(rel="stylesheet", href="/app/css/bootstrap/css/bootstrap.css", media="screen")
+
+block content
+  section.container
+    div(ng-view)
+    
+block apploader
+    script(src="/app/lib/angular/angular.js")
+    script(src="/app/lib/angular/angular-route.js")
+    script(src="/app/js/app.js")
+    script(src="/app/js/services.js")
+    script(src="/app/js/controllers.js")
+    script(src="/app/js/filters.js")
+    script(src="/app/js/directives.js")    

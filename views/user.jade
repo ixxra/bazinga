@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    section.container
+        h1 Users registered
+        
+        if users
+            ul
+                for user in users    
+                    li
+                        a(href='/admin/users/#{user._id}') #{user.email}
+                        
+        p
+            h2 Add more users
+            
+            include forms/user
+            block UserForm

@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  section.container
+    header
+      h1= title
+    p
+      h2 Welcome to #{title}, online magazine from
+      a(href='www.matematicas.uady.mx') The school of mathematics, 
+      a(href='www.uady.mx') Universidad Autonoma de Yucatan
+    section
+      header
+        h1 Editorial
+      p
+        h3 Lorem Ipsum

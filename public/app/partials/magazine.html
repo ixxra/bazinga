@@ -1,6 +1,6 @@
 <section>
     <h1>Volumes</h1>
-    <input class="pull-right" ng-model="searchText" />
+    <input class="pull-right" placeholder="Search" ng-model="searchText" />
     <article class="panel panel-default" ng-repeat="article in magazineInfo.data | filter:searchText">
         <header class="panel-heading">
             <h3 class="panel-title"><a href="{{article.url}}">{{article.title}}</a></h3>

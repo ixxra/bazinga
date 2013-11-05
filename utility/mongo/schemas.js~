@@ -1,0 +1,31 @@
+var mongoose = require ('mongoose'),
+    db = mongoose.createConnection('localhost', 'mongoosetest');
+
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  console.log('logged in');
+});
+
+
+var articleSchema = new mongoose.Schema({
+        title: String,
+        artType: String,
+        artCategory: String,
+        authors: [String]
+    });
+    
+
+var Articles = db.model('Articles', articleSchema);
+
+var article = new Articles({
+        title: 'Quantum field theory...',
+        artType: 'Divulgacion',
+        artCategory: 'Quantum field theory',
+        authors: ['Rene Israel Garcia Lara']
+});
+
+
+article.save(function (err) {
+    console.log('error saving file...', err);
+});

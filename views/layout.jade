@@ -1,7 +1,49 @@
 doctype 5
-html
+html(lang="en", ng-app="bazinga")
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    block bootstrap
+      link(rel='stylesheet', href='/css/bootstrap/css/bootstrap.css')
+  
   body
+    div.navbar.navbar-default.navbar-fixed-top(role="navigation")
+      div.container
+        div.navbar-header
+          button(type="button", class="navbar-toggle", data-toggle="collapse", data-target=".navbar-ex1-collapse")
+            span(class="sr-only") Toggle navigation
+            span(class="icon-bar")
+            span(class="icon-bar")
+            span(class="icon-bar")
+          a.navbar-brand(href="/") Abstraction & Application
+        div(class="collapse navbar-collapse navbar-ex1-collapse")
+          nav
+            ul.nav.navbar-nav
+              li
+                a(href="/app/#/magazine") Read Magazine
+              li
+                a(href="/user/work/submit") Send Article
+          ul.nav.navbar-nav.navbar-right
+            if user
+              li
+                a(href="/users/me") #{user.email}
+              li
+                a(href="/logout") (Logout)
+            else
+              li
+                a(href="/login") Login
+
     block content
+  
+    footer.container
+      ul
+        li
+          a(target="_blank", href="http://intranet.matematicas.uady.mx/journal") Original Site
+        li
+          a(target="_blank", href="https://github.com/ixxra/bazinga") Project
+          
+        li
+          a(href='/about') About this site
+  
+    block apploader

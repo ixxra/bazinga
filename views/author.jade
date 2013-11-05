@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    section.container
+        h1 Authors registered
+        
+        if authors
+            ul
+                for author in authors    
+                    li
+                        a(href='/admin/authors/#{author._id}') .
+                            #{author.name + ' ' + author.surname} (#{author.institution.toLocaleUpperCase()})
+                        
+        p
+            h2 Add more authors
+            
+            include forms/author
+            block AuthorForm

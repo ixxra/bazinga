@@ -8,6 +8,11 @@
   "dependencies": {
     "express": "3.4.3",
     "jade": "*",
-    "jsdom": "*"
+    "jsdom": "*",
+    "mongoose": "*",
+    "bcrypt": "*",
+    "connect-mongo": "*",
+    "passport": "*",
+    "passport-local": "*"
   }
 }

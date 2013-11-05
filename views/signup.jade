@@ -1,0 +1,39 @@
+doctype 5
+html(lang="en")
+
+head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="description", content="")
+    meta(name="author", content="")
+    
+    title Signin: Abstraction & Application
+        
+    link(href="/css/bootstrap/css/bootstrap.css", rel="stylesheet")
+    link(href="/css/signin.css", rel="stylesheet")
+
+body
+    div.container
+        form.form-signin(method="post")
+            h2.form-signin-heading Please sign up
+            input.form-control(type="text", name="email", placeholder="Email address", autofocus)
+            input#password.form-control(type="password", name="password", placeholder="Password")
+            input#repassword.form-control(type="password", name="repassword", placeholder="Retype Password")
+            span#important.hidden Passwords must match
+            
+            label.checkbox
+                input(type="checkbox", name="remember")
+                | Remember me
+            button#submit.btn.btn-lg.btn-primary.btn-block(type="submit") Sign up
+
+script(type='text/javascript').
+    window.submit.onclick = function () {
+      var pass = window.password.value;
+      var pass2 = window.repassword.value;
+      
+      var match = pass == pass2;
+      if (!match)
+        window.important.className = '';
+        
+      return match;
+    };
