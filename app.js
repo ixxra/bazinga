@@ -16,7 +16,8 @@ var express = require('express'),
   MongoStore = require('connect-mongo')(express);
 
 
-var db = mongoose.connect('mongodb://localhost/mongoosetest');
+var db = mongoose.connect('mongodb:ixxra@feisty13//paulo.mongohq.com:10050/abstractionapplication');
+//var db = mongoose.connect('mongodb://localhost/mongoosetest');
 
 var User = require('./models/user').User;
 
