@@ -27,7 +27,7 @@ html(lang="en", ng-app="bazinga")
           ul.nav.navbar-nav.navbar-right
             if user
               li
-                a(href="/users/me") #{user.email}
+                a(href="/me") #{user.email}
               li
                 a(href="/logout") (Logout)
             else
@@ -47,3 +47,4 @@ html(lang="en", ng-app="bazinga")
           a(href='/about') About this site
   
     block apploader
+    block scripts

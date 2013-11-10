@@ -79,8 +79,28 @@ exports.articles = {
     Article.find(function (err, articles) {
       if (err) console.error('error:', err);
       
-      res.render('admin/articles', {articles: articles, user: req.user});
+      res.render('admin/articles/index', {articles: articles, user: req.user});
     });
+  },
+  
+  getById: function (req, res) {
+    Article.findOne({_id: req.params.id}, function(err, art) {
+      if (err) console.log(err);
+      
+      res.render('admin/articles/article', {user: req.user, article: art});
+    });
+  },
+  
+  post: function (req, res) {
+    res.send('not implemented');  
+  },
+  
+  put: function (req, res) {
+    res.send('not implemented');
+  },
+  
+  delete: function(req, res) {
+    res.send('not implemented');
   }
 };
 

@@ -1,0 +1,64 @@
+extends ../layout
+
+block content
+    section.container
+        header
+            h1 Public profile for 
+                if user.username
+                    em #{user.username}
+                else
+                    em #{user.email}
+        article
+            header
+                h2 Personal information
+        
+            table
+                tr
+                    td Username
+                    td #{user.username}
+                tr
+                    td Name
+                    td #{user.name}
+                tr
+                    td Surname
+                    td Surname
+                tr
+                    td Institution
+                    td Institution
+        
+        section
+            header
+                h1 Your roles  in the magazine
+            
+        if user.roles.length === 0
+            p You don't have any role in this magazine yet. However 
+                em
+                    b Abstraction and Application 
+                | is posible only due to its community. Would you be interested in
+                | a more active role than only reader/user, you can apply for
+                | authoring, reviewing or even editing the magazine.
+        else
+            if user.roles.indexOf('admin') > -1
+                article
+                    header
+                        h2 Administrator
+                    p As system administrator, you have edited N pages, added N users, and so on..
+            if user.roles.indexOf('reviewer') > -1
+                article
+                    header
+                        h2 Peer Reviewer
+                    p As Reviewer you have worked in N papers of your colleagues, making N minor corrections,
+                    | N major corrections and approving N papers for being published.
+                    
+            article
+                header
+                    h2 Author
+                p You have worked in N papers of your own. With N 
+                    a(href='/me/collaborators') collaborators 
+                    | across the globe.
+                    
+            article
+                header
+                    h2 Editor
+                p You are Editor in Abstraction and application. That means that you have collaborated on
+                | N editorial comments, published N articles, edited N volumes and accepted N new reviewers.

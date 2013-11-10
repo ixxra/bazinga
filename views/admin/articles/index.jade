@@ -1,0 +1,20 @@
+extends ../../layout
+
+block content
+    section.container
+        article
+            header
+                h1 Categories defined here
+            
+            p Add more
+        
+        article
+            header
+               h1 Articles in the magazine
+        
+            if articles
+                ul
+                    for article in articles    
+                        li
+                            a(href='/admin/articles/#{article._id}') .
+                                #{article.title}

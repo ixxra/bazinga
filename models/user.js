@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
     
     
 //mongoose.connect('mongodb://localhost/mongoosetest');
-
+//Roles: ['admin', 'editor', 'reviewer', 'author']
 
 var UserSchema = new Schema({
     username: {type: String, required: false, unique: true}, //For now, we expect login users by email address
@@ -14,6 +14,7 @@ var UserSchema = new Schema({
     name: String,
     surname: String,
     url: String,
+    roles: [String],
     accessToken: String
 });
 
@@ -53,18 +54,6 @@ UserSchema.methods.generateRandomToken = function () {
   }
   return token;
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 exports.User = mongoose.model('users', UserSchema);

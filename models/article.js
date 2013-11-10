@@ -12,7 +12,7 @@ var ArticleSchema = new Schema({
     authors: [{type: Schema.ObjectId, required: true}],
     art_type: String,
     category: String,
-    url: {type: String, required:true}
+    url: {type: String, required: true}
 });
 
 
